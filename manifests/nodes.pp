@@ -1,0 +1,8 @@
+import "dns-1.apopx.net.pp"
+import "ldapmaster.apopx.net.pp"
+import "puppet-master.apopx.net.pp"
+import "dns-2.apopx.net.pp"
+import "mysql-server-1.apopx.net.pp"
+import "mailserver-1.apopx.net.pp"
+import "webserver-1.apopx.net.pp"
+import "monitoring.apopx.net.pp"
