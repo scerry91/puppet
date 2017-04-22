@@ -1,0 +1,15 @@
+#
+# This file is managed by puppet.
+#
+
+Defaults	env_reset
+Defaults	mail_badpass
+Defaults	secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+# User privilege specification
+root	ALL=(ALL:ALL) ALL
+nagios ALL=(root) NOPASSWD:/usr/lib/nagios/plugins/check_puppet_agent
+
+# See sudoers(5) for more information on "#include" directives:
+
+#includedir /etc/sudoers.d
