@@ -1,4 +1,11 @@
 sudo sh -c "echo \"
 deb http://ftp.uk.debian.org/debian/ $(lsb_release -cs) main
 deb-src http://ftp.uk.debian.org/debian/ $(lsb_release -cs) main
+
+deb http://security.debian.org/ $(lsb_release -cs)/updates main
+deb-src http://security.debian.org/ $(lsb_release -cs)/updates main
+
+deb http://ftp.uk.debian.org/debian/ $(lsb_release -cs)-updates main
+deb-src http://ftp.uk.debian.org/debian/ $(lsb_release -cs)-updates main
+
 \" > /etc/apt/sources.list"; sudo apt-get clean; sudo apt-get update;
