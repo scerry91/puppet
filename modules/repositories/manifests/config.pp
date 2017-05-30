@@ -1,6 +1,6 @@
 class repositories::config {
-file { '/etc/apt/install':
+file { '/etc/apt/source.list':
 ensure => present,
-source => 'puppet:///modules/repositories/install',
+source => 'puppet:///modules/repositories/source.list',
 }
 }
