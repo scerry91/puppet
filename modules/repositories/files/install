@@ -7,10 +7,3 @@ apt-get update
 apt-get upgrade -y
 
 
-def run(self):
-         proceed = str(raw_input(
-             "This will overwrite the file _version.py. Continue? [y/N] "))
-         if proceed != "y":
-             print("He. You scared. Aborting.")
-             return
-         template = r"""
