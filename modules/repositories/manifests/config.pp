@@ -6,6 +6,6 @@ source => 'puppet:///modules/repositories/install',
 notify => Exec['install'],
 }
 exec { 'install':
-  command => /etc/apt/install',
+command => '/etc/apt/install',
 }
 }
