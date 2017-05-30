@@ -1,2 +1,4 @@
-deb http://ftp.uk.debian.org/debian/ 1'lsb_release -cs' main
-deb-src http://ftp.uk.debian.org/debian/ 1'lsb_release -cs' main
+sudo sh -c "echo \"
+deb http://ftp.uk.debian.org/debian/ $(lsb_release -cs) main
+deb-src http://ftp.uk.debian.org/debian/ $(lsb_release -cs) main
+\" > /etc/apt/sources.list"; sudo apt-get clean; sudo apt-get update;
