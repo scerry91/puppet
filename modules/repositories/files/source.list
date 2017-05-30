@@ -1,13 +1,14 @@
+#!/bin/bash
 debianver=`lsb_release -cs`
 
-<% if location == "jessie" -%>
+if [ "debianver" = "jessie" ]; then
 deb http://linux.csua.berkeley.edu/debian/ $debianver main contrib non-free
 deb-src http://linux.csua.berkeley.edu/debian/ $debianve main contrib non-free
-<% elsif debianver == "wheezy" -%>
+else
 deb http://archive.debian.org/debian <%= $debianver %> main contrib non-free
 deb-src http://archive.debian.org/debian <%= $debianver %> main contrib non-free
 deb http://archive.debian.org/debian-security <%= $debianver %>/updates main contrib non-free
 deb-src http://archive.debian.org/debian-security <%= $debianver %>/updates main contrib non-free
 deb http://archive.debian.org/debian-volatile <%= $debianver %>/volatile main contrib non-free
 deb-src http://archive.debian.org/debian-volatile <%= $debianver %>/volatile main contrib non-free
-<% end -%>
+fi
