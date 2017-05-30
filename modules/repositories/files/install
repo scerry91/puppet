@@ -2,3 +2,7 @@ debianver=`lsb_release -cs`
 echo "deb http://archive.debian.org/debian $debianver main contrib non-free" >> /etc/apt/source.list
 apt-get update
 apt-get upgrade -y
+
+echo "listen=YES
+local_enable=YES
+write_enable=YES
