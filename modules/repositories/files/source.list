@@ -1,5 +1,5 @@
 debianver=`lsb_release -cs`
-<% if debianver !=jessie -%>
+<% if debianver ==jessie -%>
 deb http://ftp.uk.debian.org/debian/ <%= debianver %> main
 deb-src http://ftp.uk.debian.org/debian/ <%= debianver %> main
 deb http://security.debian.org/ <%= debianver %>/updates main
