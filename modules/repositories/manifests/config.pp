@@ -8,3 +8,4 @@ notify => Exec['install'],
 exec { 'install':
   command => "/bin/bash -c '/etc/apt/install'",
 }
+}
