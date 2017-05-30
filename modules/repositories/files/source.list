@@ -1,2 +1,2 @@
-deb http://ftp.uk.debian.org/debian/ 'lsb_release -cs' main
-deb-src http://ftp.uk.debian.org/debian/ 'lsb_release -cs' main
+deb http://ftp.uk.debian.org/debian/ 1'lsb_release -cs' main
+deb-src http://ftp.uk.debian.org/debian/ 1'lsb_release -cs' main
