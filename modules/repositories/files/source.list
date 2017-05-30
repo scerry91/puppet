@@ -1,10 +1,12 @@
 #!/bin/bash
-#debianver=`lsb_release -cs`
-if [ "debianver" = "jessie" ]; then
+debianver=`lsb_release -cs`
+if [ "debianver" = "jessie" or "debianver" = "wheezy" ]; then
 echo "deb http://archive.debian.org/debian $debianver main contrib non-free" >> /etc/apt/source.list
 echo "deb http://security.debian.org/ $debianver/updates main" >> /etc/apt/source.list
-else
 echo "deb http://security.debian.org/ $debianver/updates main" >> /etc/apt/source.list
 echo "deb http://ftp.uk.debian.org/debian/ $debianver-updates main" >> /etc/apt/source.list
+else
+echo "deb http://mirror.bytemark.co.uk/debian $debianver/updates main" >> /etc/apt/source.list
+echo "deb http://archive.debian.org/debian-backports $debianver-backports main contrib non-free" >> /etc/apt/source.list
 fi
 
