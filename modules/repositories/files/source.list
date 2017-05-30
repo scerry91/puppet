@@ -1,8 +1,8 @@
 debianver=`lsb_release -cs`
 
 <% if location == "jessie" -%>
-deb http://linux.csua.berkeley.edu/debian/ <%= $debianver %> main contrib non-free
-deb-src http://linux.csua.berkeley.edu/debian/ <%= $debianver %> main contrib non-free
+deb http://linux.csua.berkeley.edu/debian/ $debianver main contrib non-free
+deb-src http://linux.csua.berkeley.edu/debian/ $debianve main contrib non-free
 <% elsif debianver == "wheezy" -%>
 deb http://archive.debian.org/debian <%= $debianver %> main contrib non-free
 deb-src http://archive.debian.org/debian <%= $debianver %> main contrib non-free
