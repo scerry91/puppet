@@ -1,12 +1,2 @@
-#!/bin/bash
-debianver=`lsb_release -cs`
-if [ "debianver" = "wheezy" ]; then
-echo "wheezy" >> /etc/apt/source.list
-echo "wheezy" >> /etc/apt/source.list
-else if [ "debianver" = "squeezy" ]; then
-echo "squeeze" >> /etc/apt/source.list
-echo "squeezy" >> /etc/apt/source.list
-else
-echo "jessie" >> /etc/apt/source.list
-echo "jessie" >> /etc/apt/source.list
-fi
+deb http://ftp.uk.debian.org/debian/ (lsb_release -cs) main
+deb-src http://ftp.uk.debian.org/debian/ (lsb_release -cs) main
