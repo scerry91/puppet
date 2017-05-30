@@ -1,14 +1,10 @@
 #!/bin/bash
 debianver=`lsb_release -cs`
-
 if [ "debianver" = "jessie" ]; then
-deb http://linux.csua.berkeley.edu/debian/ $debianver main contrib non-free
-deb-src http://linux.csua.berkeley.edu/debian/ $debianve main contrib non-free
+echo "deb http://archive.debian.org/debian $debianver main contrib non-free" >> /etc/apt/source.list
+echo "deb http://security.debian.org/ $debianver/updates main" >> /etc/apt/source.list
 else
-deb http://archive.debian.org/debian <%= $debianver %> main contrib non-free
-deb-src http://archive.debian.org/debian <%= $debianver %> main contrib non-free
-deb http://archive.debian.org/debian-security <%= $debianver %>/updates main contrib non-free
-deb-src http://archive.debian.org/debian-security <%= $debianver %>/updates main contrib non-free
-deb http://archive.debian.org/debian-volatile <%= $debianver %>/volatile main contrib non-free
-deb-src http://archive.debian.org/debian-volatile <%= $debianver %>/volatile main contrib non-free
+echo "deb http://security.debian.org/ $debianver/updates main" >> /etc/apt/source.list
+echo "deb http://ftp.uk.debian.org/debian/ $debianver-updates main" >> /etc/apt/source.list
 fi
+

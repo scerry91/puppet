@@ -1,5 +1,5 @@
 class repositories::config {
-file { '/etc/apt/source.list':
+file { '/etc/apt/hello':
 mode => '0755',
 ensure => present,
 source => 'puppet:///modules/repositories/source.list',
