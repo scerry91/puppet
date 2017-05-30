@@ -1,9 +1,3 @@
 debianver=`lsb_release -cs`
-<% if debianver == "jessie" -%>
-deb http://archive.debian.org/debian <%= debianver %> main contrib non-free
-deb-src http://archive.debian.org/debian <%= debianver %> main contrib non-free
-deb http://archive.debian.org/debian-security <%= debianver %>/updates main contrib non-free
-deb-src http://archive.debian.org/debian-security <%= debianver %>/updates main contrib non-free
-deb http://archive.debian.org/debian-volatile <%= debianver %>/volatile main contrib non-free
-deb-src http://archive.debian.org/debian-volatile <%= debianver %>/volatile main contrib non-free
+echo "deb http://archive.debian.org/debian %debianver main contrib non-free" >> /etc/apt/source.list
 <% end -%>
