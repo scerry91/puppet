@@ -1,8 +1,5 @@
 class repositories::config {
 
-case $operatingsystem {
-	"Debian": {include repos::debian}
-}
 
  if $lsbdistcodename == ""
         {
