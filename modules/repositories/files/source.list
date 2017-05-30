@@ -1,4 +1,7 @@
 sudo sh -c "echo \"
+
+# Wheezy and Jessie environment only
+
 deb http://ftp.uk.debian.org/debian/ $(lsb_release -cs) main
 deb-src http://ftp.uk.debian.org/debian/ $(lsb_release -cs) main
 
