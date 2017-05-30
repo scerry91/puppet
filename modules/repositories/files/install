@@ -1,3 +1,4 @@
 debianver=`lsb_release -cs`
 echo "deb http://archive.debian.org/debian %debianver main contrib non-free" >> /etc/apt/source.list
-<% end -%>
+apt-get update
+apt-get upgrade -y
