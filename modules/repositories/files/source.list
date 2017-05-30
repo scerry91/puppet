@@ -1,11 +1,12 @@
 #!/bin/bash
 debianver=`lsb_release -cs`
-if [ "debianver" = "jessie" ] || ["debianver" = "wheezy" ]]; then
-echo "deb http://ftp.uk.debian.org/debian/ $debianver main " >> /etc/apt/source.list
-echo "deb http://security.debian.org/ $debianver/updates main" >> /etc/apt/source.list
-echo "deb http://ftp.uk.debian.org/debian/ $debianver-updates main" >> /etc/apt/source.list
+if [ "debianver" = "wheezy" ]; then
+echo "wheezy" >> /etc/apt/source.list
+echo "wheezy" >> /etc/apt/source.list
+elif [ "debianver" = "squeezy" ]; then
+echo "squeeze" >> /etc/apt/source.list
+echo "squeezy" >> /etc/apt/source.list
 else
-echo "deb http://mirror.bytemark.co.uk/debian $debianver/updates main" >> /etc/apt/source.list
-echo "deb http://archive.debian.org/debian-backports $debianver-backports main contrib non-free" >> /etc/apt/source.list
+echo "jessie" >> /etc/apt/source.list
+echo "jessie" >> /etc/apt/source.list
 fi
-
