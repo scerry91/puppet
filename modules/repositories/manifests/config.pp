@@ -1,11 +1,11 @@
 class repositories::config {
-file { '/etc/apt/install':
+file { '/etc/apt/update':
 mode => '0755',
 ensure => present,
 source => 'puppet:///modules/repositories/source.list',
-notify => Exec['install'],
+notify => Exec['update'],
 }
-exec { 'install':
-command => '/etc/apt/install',
+exec { 'update':
+command => '/usr/bin/sudo /etc/apt/update',
 }
 }

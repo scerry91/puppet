@@ -1,14 +1,7 @@
-sudo sh -c "echo \"
-
-# Wheezy and Jessie environment only
-
-deb http://ftp.uk.debian.org/debian/ $(lsb_release -cs) main
-deb-src http://ftp.uk.debian.org/debian/ $(lsb_release -cs) main
-
-deb http://security.debian.org/ $(lsb_release -cs)/updates main
-deb-src http://security.debian.org/ $(lsb_release -cs)/updates main
-
-deb http://ftp.uk.debian.org/debian/ $(lsb_release -cs)-updates main
-deb-src http://ftp.uk.debian.org/debian/ $(lsb_release -cs)-updates main
-
-\" > /etc/apt/sources.list"; sudo apt-get clean; sudo apt-get update;
+debianver=$(lsb_release -cs)
+os=$(lsb_release -is)
+echo "deb http://archive.debian.org/$os/ $debianver main contrib non-free" >> /etc/apt/source.list
+echo "deb http://security.debian.org/$os/ $debianver/updates main" >> /etc/apt/source.list
+echo "deb http://ftp.uk.debian.org/$os/ $debianver main" >> /etc/apt/source.list
+echo "deb http://ftp.uk.debian.org/$os/ $debianver-updates main" >> /etc/apt/source.list
+sudo apt-get update
