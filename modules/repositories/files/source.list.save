@@ -1,7 +1,0 @@
-#!/bin/bash
-debianver=`lsb_release -cs`
-if [ "debianver" = "wheezy" ]; then
-echo "wheezy" >> /etc/apt/source.list
-echo "wheezy" >> /etc/apt/source.list
-elif [ "debianver" = "squeezy" ]; then
-
