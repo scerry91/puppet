@@ -1,0 +1,13 @@
+#!/bin/bash
+#Log rotate command
+command='logrotate -vf /etc/logrotate.conf'
+threshold=5
+df -H | grep /dev/vda | awk '{ print $5 }' | while read output;
+do
+  echo $output
+  usep=$(echo $output | awk '{ print $1}' | cut -d'%' -f1  )
+  partition=$(echo $output | awk '{ print $2 }' )
+  if [ $usep -ge $threshold ]; then
+$command
+  fi
+done

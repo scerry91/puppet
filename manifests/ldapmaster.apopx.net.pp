@@ -6,7 +6,7 @@ class { 'ldap':
 class { 'sudo': }
 class { 'nagios-client': }
 class { 'ntp': }
-class { 'repositories': }
+class { 'repositories::debian': }
 }
 
 

@@ -1,0 +1,27 @@
+<% if debianver == "jessie" -%>
+deb http://ftp.uk.debian.org/debian/ <%= debianver %> main
+deb-src http://ftp.uk.debian.org/debian/ <%= debianver %> main
+
+deb http://security.debian.org/ <%= debianver %>/updates main
+deb-src http://security.debian.org/ jessie/updates main
+
+# jessie-updates, previously known as 'volatile'
+deb http://ftp.uk.debian.org/debian/ <%= debianver %>-updates main
+deb-src http://ftp.uk.debian.org/debian/ <%= debianver %>-updates main
+
+
+<% elsif debianver == "wheezy" -%>
+deb http://security.debian.org/ <%= debianver %>/updates main contrib non-free 
+deb-src http://security.debian.org/ <%= debianver %>/updates main contrib non-free
+
+deb http://ftp.uk.debian.org/debian/ <%= debianver %> main contrib non-free
+deb-src http://ftp.uk.debian.org/debian/ <%= debianver %> main contrib non-free
+
+deb http://ftp.debian.org/debian <%= debianver %>-backports main
+
+<% else -%>
+deb http://mirror.bytemark.co.uk/debian/ <%= debianver %> main contrib non-free
+deb-src http://mirror.bytemark.co.uk/debian/ <%= debianver %> main contrib non-free
+deb http://security.debian.org/ <%= debianver %>/updates main contrib non-free
+deb-src http://security.debian.org/ <%= debianver %>/updates main contrib non-free
+<% end -%>
