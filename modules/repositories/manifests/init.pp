@@ -8,11 +8,9 @@ class repositories {
 }		
 		Centos: {		
 		case $operatingsystemmajrelease {
-			7 : { #include repositories::centos }
+			7 : { include repositories::centos }
 }
-	
+}
 
-}
-}
 }
 }

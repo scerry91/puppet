@@ -1,14 +1,5 @@
 class repositories::debian {
-
-        if $lsbdistcodename == "" 
-        {
-                $debianver = ""
-        }
-        else
-        {
         $debianver = $lsbdistcodename
-        }
-
         file {
                 "/etc/apt/source.list":
                 ensure => present,
