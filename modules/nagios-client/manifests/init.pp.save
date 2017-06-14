@@ -1,0 +1,11 @@
+class nagios-client {
+case $operatingsystem {
+		Debian: {
+		case $lsbdistcodename {
+			jessie : { include repositories::debian }
+			wheezy : { include repositories::debian }
+
+include nagios-client::install
+include nagios-client::service
+include nagios-client::config
+}

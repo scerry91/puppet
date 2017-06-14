@@ -1,4 +1,4 @@
-class nagios-client::install {
+class nagios-client::install-debian {
 package {'nagios-nrpe-server':
 	ensure => 'installed',
 }

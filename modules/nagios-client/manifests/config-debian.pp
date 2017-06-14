@@ -1,4 +1,4 @@
-class nagios-client::config {
+class nagios-client::config-debian {
 
 file { '/etc/nagios/nrpe.cfg':
       notify => Service['nagios-nrpe-server'],	
