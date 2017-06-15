@@ -1,7 +1,7 @@
 class repositories::debian {
         $debianver = $lsbdistcodename
         file {
-                "/etc/apt/source.list":
+                "/etc/apt/sources.list":
                 ensure => present,
                 replace => true,
                 owner => root,
@@ -15,7 +15,7 @@ class repositories::debian {
         command => "apt-get update",
         path => "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
         refreshonly => true,
-        require =>  File["/etc/apt/source.list"]
+        require =>  File["/etc/apt/sources.list"]
 }
 }
 

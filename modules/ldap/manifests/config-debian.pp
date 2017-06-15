@@ -6,28 +6,28 @@ class ldap::config-debian {
   file { '/etc/ldap.conf':
     ensure  => present,
     mode    => '0444',
-    source  => 'puppet:///modules/ldap/ldap.conf',
+    source  => 'puppet:///modules/ldap/debian/ldap.conf',
     require => Class['ldap::install-debian'],
     notify  => Class['ldap::service-debian'],
   }
 file { '/etc/sssd/sssd.conf':
     ensure  => present,
     mode    => '0600',
-    source  => 'puppet:///modules/ldap/sssd.conf',
+    source  => 'puppet:///modules/ldap/debian/sssd.conf',
     require => Class['ldap::install-debian'],
     notify  => Class['ldap::service-debian'],
   }
 file { '/etc/nsswitch.conf':
     ensure  => present,
     mode    => '600',
-    source  => 'puppet:///modules/ldap/nsswitch.conf',
+    source  => 'puppet:///modules/ldap/debian/nsswitch.conf',
     require => Class['ldap::install-debian'],
     notify  => Class['ldap::service-debian'],
   }
 file { '/etc/nslcd.conf':
     ensure  => present,
     mode    => '0600',
-    source  => 'puppet:///modules/ldap/nslcd.conf',
+    source  => 'puppet:///modules/ldap/debian/nslcd.conf',
     require => Class['ldap::install-debian'],
     notify  => Class['ldap::service-debian'],
 
@@ -35,7 +35,7 @@ file { '/etc/nslcd.conf':
 file { '/etc/ldap/ldap.conf':
     ensure  => present,
     mode    => '0444',
-    source  => 'puppet:///modules/ldap/ldap.conf',
+    source  => 'puppet:///modules/ldap/debian/ldap.conf',
     require => Class['ldap::install-debian'],
     notify  => Class['ldap::service-debian'],
 
@@ -43,7 +43,7 @@ file { '/etc/ldap/ldap.conf':
 file { '/etc/pam.d/common-session':
     ensure  => present,
     mode    => '0444',
-    source  => 'puppet:///modules/ldap/common-session-debian',
+    source  => 'puppet:///modules/ldap/debian/common-session',
     require => Class['ldap::install-debian'],
     notify  => Class['ldap::service-debian'],
 

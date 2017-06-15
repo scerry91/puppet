@@ -1,8 +1,6 @@
 node 'dns-2.apopx.net' {
-class { 'ldap':
-  base_dn => 'dc=apopx,dc=net',
-  uris    => [ 'ldap://192.168.0.28' ],
-}
+class { 'repositories': }
+class { 'ldap': }
 class { 'sudo': }
 class { 'nagios-client': }
 class { 'ntp': }
