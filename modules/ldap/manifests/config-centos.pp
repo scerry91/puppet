@@ -32,4 +32,16 @@ file { '/etc/nscd.conf':
     notify  => Class['ldap::service-centos'],
 
 }
+file { '/etc/pam.d/system-auth':
+    ensure  => present,
+    mode    => '0644',
+    source  => 'puppet:///modules/ldap/system-auth-centos',
+    require => Class['ldap::install-centos'],
+    notify  => Class['ldap::service-centos'],
+
+}
+file { '/etc/pam.d/system-auth-ac':
+	ensure => link,
+	target => '/etc/pam.d/system-auth'
+}
 }

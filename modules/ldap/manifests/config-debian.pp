@@ -40,4 +40,12 @@ file { '/etc/ldap/ldap.conf':
     notify  => Class['ldap::service-debian'],
 
 }
+file { '/etc/pam.d/common-session':
+    ensure  => present,
+    mode    => '0444',
+    source  => 'puppet:///modules/ldap/common-session-debian',
+    require => Class['ldap::install-debian'],
+    notify  => Class['ldap::service-debian'],
+
+}
 }
