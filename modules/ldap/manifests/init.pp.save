@@ -1,0 +1,12 @@
+class ldap {
+case $operatingsystem {
+Debian: {
+		case $lsbdistcodename {
+			jessie : { 
+			 include nagios-client::install-debian 
+			 include nagios-client::service-debian 
+			 include nagios-client::config-debian 
+
+
+
+

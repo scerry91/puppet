@@ -1,4 +1,4 @@
-class ldap::install {
+class ldap::install-debian {
 package {'sssd':
         ensure => 'installed',
 }
